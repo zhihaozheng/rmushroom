@@ -1,0 +1,14 @@
+Package: mushroom
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1
+Date: 2016-07-11
+Author: Zhihao Zheng
+Maintainer: Zhihao Zheng <zzhengcn@gmail.com>
+Description: More about what it does (maybe more than one line)
+License: GPL-3
+Depends:
+    nat,
+    igraph,
+    nabor
+RoxygenNote: 5.0.1
