@@ -59,7 +59,7 @@ get_nndist <- function(query, target) {
 #' return soma distance for a pair of neurons
 #' @export
 soma_dist <- function (n1, n2) {
-  dist(rbind(xyzmatrix(n1$d[q$StartPoint,]),xyzmatrix(n2$d[t$StartPoint,])))
+  dist(rbind(xyzmatrix(n1$d[n1$StartPoint,]), xyzmatrix(n2$d[n2$StartPoint,])))
 }
 
 #' get cable length of neuron
@@ -68,4 +68,11 @@ soma_dist <- function (n1, n2) {
 #' @export
 cable_len <- function(nl, skid) {
   unlist(summary(nl[as.character(skid)], include.attached.dataframe = FALSE)['cable.length'])
+}
+
+#' a dfs search to traverse a neuron
+#' @param starting_idx the node index of the starting point of the traversal
+#' @export
+walk_skeleton <- function(x, starting_idx) {
+n_graph_dfs = igraph::dfs(as.ngraph(x), root = starting_idx, "out", unreachable = FALSE)$order
 }
