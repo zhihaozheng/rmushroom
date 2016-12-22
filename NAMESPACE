@@ -2,8 +2,11 @@
 
 export(cable_len)
 export(check_tag)
+export(fetch_mb_neurons)
+export(fetchn_by_annotation)
 export(get_nndist)
 export(get_tagged_node)
+export(segment_arbor)
 export(skid_name)
 export(soma_dist)
 export(walk_skeleton)
