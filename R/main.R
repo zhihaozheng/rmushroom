@@ -68,7 +68,7 @@ soma_dist <- function (n1, n2) {
 #'    and a neuronlist that contains the neuron,
 #' @export
 cable_len <- function(nl, skid) {
-  unlist(summary(nl[as.character(skid)], include.attached.dataframe = FALSE)['cable.length'])
+  summary(nl[[as.character(skid)]])[['cable.length']]
 }
 
 #' a dfs search to traverse a neuron
