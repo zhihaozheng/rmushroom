@@ -5,12 +5,12 @@ skid_name <- function (skid, nl) {
   attr(nl[as.character(skid)],'df')$name
 }
 
-#' check occurances of a tag in each neuron of a neuron list
+#' Check occurrences of a tag in each neuron of a neuron list
 #' @param nl a neuron list
 #' @param tag name of the tag(e.g. 'pedunculus-calyx boundary')
-#' @param counts number of occurances of the tag in each neuron
+#' @param counts number of occurrences of the tag in each neuron
 #' @export
-#' @return a list containing the number of tag occurances in each neuron
+#' @return a list containing the number of tag occurrences in each neuron
 check_tag <- function(nl, tag, counts=1) {
   c=nlapply(nl, function(nl) length(nl$tags[[tag]]))
   if (sum(c==counts) != length(c)) warning ('Tag counts per neuron do not match!')
