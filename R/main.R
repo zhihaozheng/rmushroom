@@ -58,6 +58,7 @@ get_nndist <- function(query, target) {
 
 #' return soma distance for a pair of neurons
 #' @export
+#' @importFrom stats dist
 soma_dist <- function (n1, n2) {
   dist(rbind(xyzmatrix(n1$d[n1$StartPoint,]), xyzmatrix(n2$d[n2$StartPoint,])))
 }
