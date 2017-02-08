@@ -5,12 +5,12 @@ skid_name <- function (skid, nl) {
   attr(nl[as.character(skid)],'df')$name
 }
 
-#' check occurances of a tag in each neuron of a neuron list
+#' Check occurrences of a tag in each neuron of a neuron list
 #' @param nl a neuron list
 #' @param tag name of the tag(e.g. 'pedunculus-calyx boundary')
-#' @param counts number of occurances of the tag in each neuron
+#' @param counts number of occurrences of the tag in each neuron
 #' @export
-#' @return a list containing the number of tag occurances in each neuron
+#' @return a list containing the number of tag occurrences in each neuron
 check_tag <- function(nl, tag, counts=1) {
   c=nlapply(nl, function(nl) length(nl$tags[[tag]]))
   if (sum(c==counts) != length(c)) warning ('Tag counts per neuron do not match!')
@@ -58,6 +58,7 @@ get_nndist <- function(query, target) {
 
 #' return soma distance for a pair of neurons
 #' @export
+#' @importFrom stats dist
 soma_dist <- function (n1, n2) {
   dist(rbind(xyzmatrix(n1$d[n1$StartPoint,]), xyzmatrix(n2$d[n2$StartPoint,])))
 }
@@ -67,7 +68,7 @@ soma_dist <- function (n1, n2) {
 #'    and a neuronlist that contains the neuron,
 #' @export
 cable_len <- function(nl, skid) {
-  unlist(summary(nl[as.character(skid)], include.attached.dataframe = FALSE)['cable.length'])
+  summary(nl[[as.character(skid)]])[['cable.length']]
 }
 
 #' a dfs search to traverse a neuron

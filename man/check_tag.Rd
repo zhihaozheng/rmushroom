@@ -2,7 +2,7 @@
 % Please edit documentation in R/main.R
 \name{check_tag}
 \alias{check_tag}
-\title{check occurances of a tag in each neuron of a neuron list}
+\title{Check occurrences of a tag in each neuron of a neuron list}
 \usage{
 check_tag(nl, tag, counts = 1)
 }
@@ -11,12 +11,12 @@ check_tag(nl, tag, counts = 1)
 
 \item{tag}{name of the tag(e.g. 'pedunculus-calyx boundary')}
 
-\item{counts}{number of occurances of the tag in each neuron}
+\item{counts}{number of occurrences of the tag in each neuron}
 }
 \value{
-a list containing the number of tag occurances in each neuron
+a list containing the number of tag occurrences in each neuron
 }
 \description{
-check occurances of a tag in each neuron of a neuron list
+Check occurrences of a tag in each neuron of a neuron list
 }
 
