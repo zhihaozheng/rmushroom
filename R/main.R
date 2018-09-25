@@ -2,7 +2,7 @@
 #' @param nl a neuron list
 #' @export
 skid_name <- function (skid, nl) {
-  attr(nl[as.character(skid)],'df')$name
+  nl[as.character(skid),'name']
 }
 
 #' Check occurrences of a tag in each neuron of a neuron list
@@ -109,7 +109,7 @@ fetchn_by_annotation <- function(anno, conn, anno_type, ...) {
 fetch_mb_neurons <- function(annos, conn, anno_type='annos', ref="FCWB", border_tag=NULL, ...) {
   nl = do.call(c, lapply(annos, fetchn_by_annotation, conn, anno_type, ...))
 
-  if (anyDuplicated(attr(nl, 'df')$skid) != 0)  message("More than 1 annotations on a neuron!")
+  if (anyDuplicated(nl[,"skid"]) != 0)  message("More than 1 annotations on a neuron!")
   if (!is.null(ref)) nl = nlapply(nl, xform_brain, sample="FAFB13", reference=ref)
   if (!is.null(border_tag)) nl = nlapply(nl, function(n) segment_arbor(n, border_tag, n$skid))
   nl
