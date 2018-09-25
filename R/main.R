@@ -137,7 +137,7 @@ fetch_mb_neurons <- function(annos, conn, anno_type='annos', ref="FCWB", border_
 segment_arbor <- function(n, border_tag, skid=NULL) {
   ng=as.ngraph(n)
 
-  if (!"bouton border" %in% names(n$tags)) {
+  if (!border_tag %in% names(n$tags)) {
     n$AnaSeg = list()
     n$BoutonEnds = list()
     message(paste0("This neuron doesn't have tag ", border_tag))
